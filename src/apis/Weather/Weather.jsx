@@ -12,6 +12,7 @@ const Weather = () => {
     try {
       const response = await axios.get(`https://api.openweathermap.org/data/2.5/weather?q=${location}&appid=${weatherKey}`);
       setWeatherData(response.data);
+      console.log(response.data)
       setError('');
     } catch (error) {
       console.log(error);
@@ -52,7 +53,7 @@ const Weather = () => {
             </div>
 
             <div className="weather-info">
-              <h6 className="temperature">{weatherData.main.temp}°C</h6>
+              <h6 className="temperature">{(weatherData.main.temp - 273.15).toFixed(2)}°C</h6>
               <span className="description">{weatherData.weather[0].description}</span>
             </div>
 

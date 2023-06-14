@@ -8,6 +8,8 @@ import PasswordReset from "./pages/PasswordReset";
 import Register from "./pages/Register";
 import UpdatePassword from "./pages/UpdatePassword";
 
+import Threefiber from "./pages/ReactThreejs/Threefiber";
+import "./App.css"
 const App = () => {
   return (
     <>
@@ -28,6 +30,7 @@ const App = () => {
           </Routes>
         </div>
       </Container>
+      <Threefiber/>
     </>
   );
 };
